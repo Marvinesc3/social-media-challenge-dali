@@ -1,82 +1,60 @@
-## Example app using MongoDB
+# DALI Social Media Challenge
 
-[MongoDB](https://www.mongodb.com/) is a general purpose, document-based, distributed database built for modern application developers and for the cloud era. This example will show you how to connect to and use MongoDB as your backend for your Next.js app.
+Submitted by: **Marvin Escobar Barajas**
 
-If you want to learn more about MongoDB, visit the following pages:
+I hope to create a working front-end and back-end for this project. I will
+be using Next.js for this project, which does a lot of the heavy lifting on 
+the backend portion, since it provides its own server and a working api 
+through its filesystem.
 
-- [MongoDB Atlas](https://mongodb.com/atlas)
-- [MongoDB Documentation](https://docs.mongodb.com/)
+Time spent: **?** hours spent in total
 
-## Deploy your own
+## Required Features
 
-Once you have access to the environment variables you'll need, deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example):
+The following **required** functionality is completed for the front-end:
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?project-name=with-mongodb&repository-name=with-mongodb&repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fnext.js%2Ftree%2Fcanary%2Fexamples%2Fwith-mongodb&integration-ids=oac_jnzmjqM10gllKmSrG0SGrHOH)
+* [ ] Display user profiles and **at least two other features**
+* [ ] Post Creation
+* [ ] Likes/reactions
+* [ ] Following/friending users
+* [ ] Must be run locally on machines with either npm or yarn
 
-## How to use
+The following **required** functionality is completed for the back-end:
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init), [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/), or [pnpm](https://pnpm.io) to bootstrap the example:
+* [ ] Create a REST API with at least GET/POST routes
+* [ ] Must be run locally on machines with either npm or yarn
 
-```bash
-npx create-next-app --example with-mongodb with-mongodb-app
-```
+The following **optional** features are implemented:
 
-```bash
-yarn create next-app --example with-mongodb with-mongodb-app
-```
+* [ ] Improve UI/UX of app
+* [ ] incorporate d3.js to add some data-viz for the anonymous data chunks
 
-```bash
-pnpm create next-app --example with-mongodb with-mongodb-app
-```
+## Video Walkthrough
 
-## Configuration
+Here's a walkthrough of implemented features:
 
-### Set up a MongoDB database
+<img src='app_recording.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
-Set up a MongoDB database either locally or with [MongoDB Atlas for free](https://mongodb.com/atlas).
+<!-- Replace this with whatever GIF tool you used! -->
+GIF created with [LiceCap](http://www.cockos.com/licecap/).  
+<!-- Other options include:
+[Kap](https://getkap.co/) for macOS
+[ScreenToGif](https://www.screentogif.com/) for Windows
+[peek](https://github.com/phw/peek) for Linux. -->
 
-### Set up environment variables
 
-Copy the `env.local.example` file in this directory to `.env.local` (which will be ignored by Git):
+## License
 
-```bash
-cp .env.local.example .env.local
-```
+    Copyright [2022] [Marvin Escobar Barajas]
 
-Set each variable on `.env.local`:
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
 
-- `MONGODB_URI` - Your MongoDB connection string. If you are using [MongoDB Atlas](https://mongodb.com/atlas) you can find this by clicking the "Connect" button for your cluster.
+        http://www.apache.org/licenses/LICENSE-2.0
 
-### Run Next.js in development mode
-
-```bash
-npm install
-npm run dev
-
-# or
-
-yarn install
-yarn dev
-```
-
-Your app should be up and running on [http://localhost:3000](http://localhost:3000)! If it doesn't work, post on [GitHub discussions](https://github.com/vercel/next.js/discussions).
-
-You will either see a message stating "You are connected to MongoDB" or "You are NOT connected to MongoDB". Ensure that you have provided the correct `MONGODB_URI` environment variable.
-
-When you are successfully connected, you can refer to the [MongoDB Node.js Driver docs](https://mongodb.github.io/node-mongodb-native/3.4/tutorials/collections/) for further instructions on how to query your database.
-
-## Deploy on Vercel
-
-You can deploy this app to the cloud with [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
-
-#### Deploy Your Local Project
-
-To deploy your local project to Vercel, push it to GitHub/GitLab/Bitbucket and [import to Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example).
-
-**Important**: When you import your project on Vercel, make sure to click on **Environment Variables** and set them to match your `.env.local` file.
-
-#### Deploy from Our Template
-
-Alternatively, you can deploy using our template by clicking on the Deploy button below.
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?project-name=with-mongodb&repository-name=with-mongodb&repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fnext.js%2Ftree%2Fcanary%2Fexamples%2Fwith-mongodb&integration-ids=oac_jnzmjqM10gllKmSrG0SGrHOH)
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
