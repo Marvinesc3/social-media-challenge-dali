@@ -7,7 +7,7 @@ be using Next.js for this project, which does a lot of the heavy lifting on
 the backend portion, since it provides its own server and a working api 
 through its filesystem.
 
-Time spent: **?** hours spent in total
+[Follow my progress here!](https://github.com/Marvinesc3/social-media-challenge-dali/blob/main/todo.md)
 
 ## Required Features
 
