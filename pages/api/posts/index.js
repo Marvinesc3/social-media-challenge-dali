@@ -1,15 +1,21 @@
 import dbConnect from "../../../lib/dbConnect";
 import Post from "../../../models/Post";
 
+
+export async function getAllPosts() {
+    await dbConnect();
+    const posts = await Post.find({}).sort({ date: 1 });
+
+    return posts
+}
+
 export default async function handler(req, res) {
   const { method } = req;
-
-  await dbConnect();
 
   switch (method) {
     case "GET":
       try {
-        const posts = await Post.find({});
+          const posts = await getAllPosts();
 
         res.status(200).json({ success: true, data: posts });
       } catch (error) {

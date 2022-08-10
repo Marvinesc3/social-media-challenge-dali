@@ -3,7 +3,9 @@ import User from "../../../models/User";
 
 export async function getAllUsers() {
   await dbConnect();
-  const users = await User.find({}).sort({ name: -1 });
+  const users = await User.find({
+    "Hispanic or Latino": "Hispanic or Latino",
+  },{name: 1}).sort({ name: -1 });
 
   return users;
 }

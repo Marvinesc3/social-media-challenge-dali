@@ -17,6 +17,6 @@ I will add in user authentication at a later point.
 For tomorrow, my goal is to add POST api routes to create a new user, GET routes to retrieve a single post. After that, I will begin to work on the front end.  
 
 8/10
-* [ ] GET /:postId
-* [ ] POST /:userId
+* [X] GET /:postId
+* [X] POST /:userId
 * [ ] create a homepage
