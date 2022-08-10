@@ -1,5 +1,5 @@
-import Head from 'next/head'
-import { getAllUsers } from './api/users';
+import Head from "next/head";
+import { getAllUsers } from "./api/users";
 
 export default function Home({ users }) {
   console.log(users.length);
@@ -11,31 +11,29 @@ export default function Home({ users }) {
       </Head>
 
       <div>
-      <h1>Top 20 users</h1>
-      <ul>
-        {users.map((user) => (
-          <li>
-            <h2>{user.name}</h2>
-            <h3>{user.quote}</h3>
-            <p>{user.year}</p>
-          </li>
-        ))}
-      </ul>
-    </div>
+        <h1>Top 20 users</h1>
+        <ul>
+          {users.map((user) => (
+            <li>
+              <h2>{user.name}</h2>
+              <h3>{user.quote}</h3>
+              <p>{user.year}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
 
       <footer>
         <a
           href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
           target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
+          rel="noopener noreferrer">
+          Powered by{" "}
           <img src="/vercel.svg" alt="Vercel Logo" className="logo" />
         </a>
       </footer>
 
       <style jsx>{`
-
         main {
           padding: 5rem 0;
           flex: 1;
@@ -53,8 +51,6 @@ export default function Home({ users }) {
           justify-content: center;
           align-items: center;
         }
-
-
       `}</style>
 
       <style jsx global>{`
@@ -72,15 +68,15 @@ export default function Home({ users }) {
         }
       `}</style>
     </div>
-  )
+  );
 }
 
 export async function getServerSideProps() {
-  const users = await getAllUsers()
+  const users = await getAllUsers();
 
   return {
     props: {
       users: JSON.parse(JSON.stringify(users)),
     },
-  }
+  };
 }
