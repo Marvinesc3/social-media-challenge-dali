@@ -1,7 +1,8 @@
 import Head from 'next/head'
-import { connectToDatabase } from "../lib/dbConnect";
+import { getAllUsers } from './api/users';
 
 export default function Home({ users }) {
+  console.log(users.length);
   return (
     <div className="container">
       <Head>
@@ -75,14 +76,7 @@ export default function Home({ users }) {
 }
 
 export async function getServerSideProps() {
-  const { db } = await connectToDatabase();
-
-  const users = await db 
-    .collection("public")
-    .find({})
-    .sort({ name: -1 })
-    .limit(20) 
-    .toArray();
+  const users = await getAllUsers()
 
   return {
     props: {
