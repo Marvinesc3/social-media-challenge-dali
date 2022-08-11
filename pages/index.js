@@ -1,55 +1,34 @@
 import Head from "next/head";
-import Layout from "../components/layout";
-import { getAllUsers } from "./api/users";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import { getAllUsers } from "../pages/api/users";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
 export default function Home({ users }) {
+  const userList = users.map((user) => {
+    return <Col>{user.name}</Col>;
+  });
   return (
-    <Layout home>
+    <main className="d-flex flex-column min-vh-100">
       <Head>
-        <title>Create Next App</title>
+        <title>Meet@Dali</title>
+        <meta
+          name="description"
+          content="Post tidbits about software engineering, meet DALI members, follow your friends."
+        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <div>
-        <h1>Top 20 users</h1>
-        <ul>
-          {users.map((user) => (
-            <li key={user._id}>
-              <h2>{user.name}</h2>
-              <h3>{user.quote}</h3>
-              <p>{user.year}</p>
-            </li>
-          ))}
-        </ul>
-      </div>
-
-      <style jsx>{`
-        main {
-          padding: 5rem 0;
-          flex: 1;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
-
-      `}</style>
-
-      <style jsx global>{`
-        html,
-        body {
-          padding: 0;
-          margin: 0;
-          font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-            Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-            sans-serif;
-        }
-
-        * {
-          box-sizing: border-box;
-        }
-      `}</style>
-    </Layout>
+      <Header home />
+      <Container fluid="md">
+        <Row md={4} sm={3} xs={2}>
+          {userList}
+          <style jsx>{``}</style>
+        </Row>
+      </Container>
+      <Footer />
+    </main>
   );
 }
 
