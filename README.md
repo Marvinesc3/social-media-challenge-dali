@@ -42,6 +42,8 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 [ScreenToGif](https://www.screentogif.com/) for Windows
 [peek](https://github.com/phw/peek) for Linux. -->
 
+## Notes
+I realized I was using both npm and yarn throughout the project. Although it didn't cause any issues now, I definitely want to use only one for other projects I make.
 
 ## License
 

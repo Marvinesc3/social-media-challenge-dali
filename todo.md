@@ -19,4 +19,9 @@ For tomorrow, my goal is to add POST api routes to create a new user, GET routes
 8/10
 * [X] GET /:postId
 * [X] POST /:userId
-* [ ] create a homepage
+* [X] create a homepage
+
+8/11
+* [ ] integrate bootstrap
+* [ ] improve UI of homepage
+* [ ] create post component and show on homepage

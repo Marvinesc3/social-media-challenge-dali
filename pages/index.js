@@ -1,10 +1,10 @@
 import Head from "next/head";
+import Layout from "../components/layout";
 import { getAllUsers } from "./api/users";
 
 export default function Home({ users }) {
-  console.log(users.length);
   return (
-    <div className="container">
+    <Layout home>
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
@@ -14,7 +14,7 @@ export default function Home({ users }) {
         <h1>Top 20 users</h1>
         <ul>
           {users.map((user) => (
-            <li>
+            <li key={user._id}>
               <h2>{user.name}</h2>
               <h3>{user.quote}</h3>
               <p>{user.year}</p>
@@ -22,16 +22,6 @@ export default function Home({ users }) {
           ))}
         </ul>
       </div>
-
-      <footer>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer">
-          Powered by{" "}
-          <img src="/vercel.svg" alt="Vercel Logo" className="logo" />
-        </a>
-      </footer>
 
       <style jsx>{`
         main {
@@ -43,14 +33,6 @@ export default function Home({ users }) {
           align-items: center;
         }
 
-        footer {
-          width: 100%;
-          height: 100px;
-          border-top: 1px solid #eaeaea;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
       `}</style>
 
       <style jsx global>{`
@@ -67,7 +49,7 @@ export default function Home({ users }) {
           box-sizing: border-box;
         }
       `}</style>
-    </div>
+    </Layout>
   );
 }
 
