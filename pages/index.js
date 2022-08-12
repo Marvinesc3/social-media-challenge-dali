@@ -5,11 +5,10 @@ import { getAllUsers } from "../pages/api/users";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import Button from "react-bootstrap/Button";
+import Card from "react-bootstrap/Card";
 
 export default function Home({ users }) {
-  const userList = users.map((user) => {
-    return <Col>{user.name}</Col>;
-  });
   return (
     <main className="d-flex flex-column min-vh-100">
       <Head>
@@ -22,9 +21,18 @@ export default function Home({ users }) {
       </Head>
       <Header home />
       <Container fluid="md">
-        <Row md={4} sm={3} xs={2}>
-          {userList}
-          <style jsx>{``}</style>
+        <Row xs={1} md={4} className="g-4">
+          {users.map((user) => (
+            <Col key={user._id}>
+              <Card>
+                <Card.Img variant="top" src={user.picture} />
+                <Card.Body>
+                  <Card.Title>{user.name}</Card.Title>
+                  <Card.Text>{user.quote}</Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
+          ))}
         </Row>
       </Container>
       <Footer />
