@@ -7,6 +7,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
+import Image from "next/image";
 
 export default function Home({ users }) {
   return (
@@ -24,8 +25,17 @@ export default function Home({ users }) {
         <Row xs={1} md={4} className="g-4">
           {users.map((user) => (
             <Col key={user._id}>
-              <Card>
-                <Card.Img variant="top" src={user.picture} />
+              <Card style={{width: '18rem', height: '24rem'}}>
+                <div className="aspect-w-16 aspect-h-9">
+                  <Image
+                    src={user.picture} // Route of the image file
+                    layout="responsive"
+                    width={10}
+                    height={12}
+                    objectFit="cover"
+                    alt={user.name}
+                  />
+                </div>
                 <Card.Body>
                   <Card.Title>{user.name}</Card.Title>
                   <Card.Text>{user.quote}</Card.Text>
