@@ -22,13 +22,14 @@ export default function Home({ users }) {
       </Head>
       <Header home />
       <Container fluid="md">
-        <Row xs={1} sm={2} md={4} lg={4} className="g-4">
+        <Row xs={1} sm={2} md={3} lg={4} className="g-4">
           {users.map((user) => (
             <Col key={user._id}>
-              <Card style={{ width: "20rem"}}>
-                <div className="mh-100">
+              <Card>
+                <div className="mh-100 mw-100">
                   <Image
                     src={user.picture} // Route of the image file
+                    fluid={+true}
                     layout="responsive"
                     width={9}
                     height={16}
@@ -42,7 +43,7 @@ export default function Home({ users }) {
                   <Card.Subtitle className="mb-2 text-muted">
                     {user.role}
                   </Card.Subtitle>
-                  <Card.Text>{user.quote.length > 80 ? user.quote.slice(0,78) + "..." : user.quote}</Card.Text>
+                  <Card.Text>{user.quote.length > 71 ? user.quote.slice(0,69) + "..." : user.quote}</Card.Text>
                 </Card.Body>
               </Card>
             </Col>
