@@ -24,8 +24,9 @@ export default function Home({ users }) {
       <Container fluid="md">
         <Row xs={1} sm={2} md={4} lg={4} className="g-4">
           {users.map((user) => (
-            <Col key={user._id} styles={{margin: "1 1rem"}}>
-              <Card style={{ width: '20rem', height: '27rem' }}>
+            <Col key={user._id}>
+              <Card style={{ width: "20rem"}}>
+                <div className="mh-100">
                   <Image
                     src={user.picture} // Route of the image file
                     layout="responsive"
@@ -34,10 +35,14 @@ export default function Home({ users }) {
                     objectFit="cover"
                     alt={user.name}
                   />
+                </div>
+
                 <Card.Body>
                   <Card.Title>{user.name}</Card.Title>
-                  <Card.Subtitle className="mb-2 text-muted">{user.role}</Card.Subtitle>
-                  <Card.Text>{user.quote}</Card.Text>
+                  <Card.Subtitle className="mb-2 text-muted">
+                    {user.role}
+                  </Card.Subtitle>
+                  <Card.Text>{user.quote.length > 80 ? user.quote.slice(0,78) + "..." : user.quote}</Card.Text>
                 </Card.Body>
               </Card>
             </Col>
