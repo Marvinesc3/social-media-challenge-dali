@@ -27,6 +27,9 @@ For tomorrow, my goal is to add POST api routes to create a new user, GET routes
 * [X] create post component and show on homepage
 
 8/12
-* [ ] fix sizes of cards on homepage
-* [ ] improve loading times for images
-* [ ] build loading page while images are being rendered 
+* [X] fix sizes of cards on homepage
+* [X] improve loading times for images
+* <s>[ ] build loading page while images are being rendered</s> 
+* [ ] create links between home page and profiles/posts page
+* [ ] create profile page
+* [ ] create posts page
