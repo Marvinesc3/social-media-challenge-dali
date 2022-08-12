@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Header from "../components/Header";
-import Footer from "../components/Footer";
+import UserNavbar from "../components/UserNavbar";
 import { getAllUsers } from "../pages/api/users";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -19,8 +19,10 @@ export default function Home({ users }) {
           content="Post tidbits about software engineering, meet DALI members, follow your friends."
         />
         <link rel="icon" href="/favicon.ico" />
+
       </Head>
       <Header home />
+      <UserNavbar />
       <Container fluid="md">
         <Row xs={1} sm={2} md={3} lg={4} className="g-4">
           {users.map((user) => (
@@ -50,7 +52,6 @@ export default function Home({ users }) {
           ))}
         </Row>
       </Container>
-      <Footer />
     </main>
   );
 }
