@@ -22,6 +22,11 @@ For tomorrow, my goal is to add POST api routes to create a new user, GET routes
 * [X] create a homepage
 
 8/11
-* [ ] integrate bootstrap
-* [ ] improve UI of homepage
-* [ ] create post component and show on homepage
+* [X] integrate bootstrap
+* [X] improve UI of homepage
+* [X] create post component and show on homepage
+
+8/12
+* [ ] fix sizes of cards on homepage
+* [ ] improve loading times for images
+* [ ] build loading page while images are being rendered 
