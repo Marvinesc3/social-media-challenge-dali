@@ -22,22 +22,21 @@ export default function Home({ users }) {
       </Head>
       <Header home />
       <Container fluid="md">
-        <Row xs={1} md={4} className="g-4">
+        <Row xs={1} sm={2} md={4} lg={4} className="g-4">
           {users.map((user) => (
-            <Col key={user._id}>
-              <Card style={{width: '18rem', height: '24rem'}}>
-                <div className="aspect-w-16 aspect-h-9">
+            <Col key={user._id} styles={{margin: "1 1rem"}}>
+              <Card style={{ width: '20rem', height: '27rem' }}>
                   <Image
                     src={user.picture} // Route of the image file
                     layout="responsive"
-                    width={10}
-                    height={12}
+                    width={9}
+                    height={16}
                     objectFit="cover"
                     alt={user.name}
                   />
-                </div>
                 <Card.Body>
                   <Card.Title>{user.name}</Card.Title>
+                  <Card.Subtitle className="mb-2 text-muted">{user.role}</Card.Subtitle>
                   <Card.Text>{user.quote}</Card.Text>
                 </Card.Body>
               </Card>

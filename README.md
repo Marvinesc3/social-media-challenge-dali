@@ -44,7 +44,8 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 I realized I was using both npm and yarn throughout the project. Although it didn't cause any issues now, I definitely want to use only one for other projects I make.
-
+If I ever needed to make my own website where I collect user pictures,
+I need to make sure they are all cropped to the same size. 
 ## License
 
     Copyright [2022] [Marvin Escobar Barajas]
