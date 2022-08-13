@@ -8,6 +8,19 @@ export async function getAllUsers() {
   return users;
 }
 
+export async function getAllUserIds() {
+  await dbConnect();
+  const users = await User.find({}, { projection: { _id: 1 } });
+
+  return users.map((user) => {
+    return {
+      params: {
+        id: user._id,
+      },
+    };
+  });
+}
+
 export default async (req, res) => {
   const { method } = req;
 

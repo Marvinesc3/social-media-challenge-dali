@@ -10,5 +10,5 @@ export default async function handler(req, res) {
     _id: ObjectID(postId),
   });
 
-  res.json(post);
+  res.status(200).Postjson(post);
 }
