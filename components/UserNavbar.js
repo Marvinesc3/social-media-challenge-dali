@@ -1,7 +1,7 @@
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import { Github, House, PersonBadge } from "react-bootstrap-icons";
+import { Github, House, PersonBadge, Search } from "react-bootstrap-icons";
 
 import Link from "next/link";
 
@@ -24,9 +24,19 @@ export default function UserNavbar() {
           { /* TODO: Fix matching <a> error */ }
           <Nav className="me-auto">
             <Nav.Link>
-              <Link href="./pages/user">
+              <Link href="#">
                 <a>
                   <PersonBadge size="2rem" color="white"></PersonBadge>
+                </a>
+              </Link>
+              <Link href="/">
+                <a>
+                  <House size="2rem" color="white"></House>
+                </a>
+              </Link>
+              <Link href="#">
+                <a>
+                  <Search size="2rem" color="white"></Search>
                 </a>
               </Link>
             </Nav.Link>

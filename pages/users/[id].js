@@ -1,11 +1,42 @@
+import Header from "../../components/Header";
+import Layout from "../../components/Layout";
+import UserNavbar from "../../components/UserNavbar";
 import { getUserData } from "../api/users/[userId]";
+import Image from "next/image";
+import Button from "react-bootstrap/Button";
+import Card from "react-bootstrap/Card";
+
+const styles = {
+  cardImage: {
+    width: "100%",
+    height: "100%",
+    position: "relative"
+  },
+};
 
 export default function User({ userData }) {
   return (
-    <div>
-      <h1 className="d-5 light">{userData.name}</h1>
-      <h1 className="d-5 light">{userData.picture}</h1>
-    </div>
+    <Layout>
+      <Header></Header>
+      <UserNavbar></UserNavbar>
+      <main>
+        <div styles={styles.cardImage} className="d-flex justify-content-center">
+          <Card className="d-block">
+            <Image
+              src={userData.picture}
+              width="100%"
+              height="100%"
+              layout="responsive"
+              objectFit="cover"
+            />
+            <Card.Body>
+              <Card.Text className="lead">{userData.quote}</Card.Text>
+            </Card.Body>
+          </Card>
+          <div className="p-2 bd-highlight color-white">Flex item</div>
+        </div>
+      </main>
+    </Layout>
   );
 }
 

@@ -31,5 +31,10 @@ For tomorrow, my goal is to add POST api routes to create a new user, GET routes
 * [X] improve loading times for images
 * <s>[ ] build loading page while images are being rendered</s> 
 * [ ] create links between home page and profiles/posts page
-* [ ] create profile page
+* [X] create profile page
+* [ ] create posts page
+
+8/13
+* [ ] improve UI of profile page
+* [ ] create links between home page and profiles/posts page
 * [ ] create posts page
