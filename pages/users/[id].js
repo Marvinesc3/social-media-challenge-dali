@@ -5,14 +5,8 @@ import { getUserData } from "../api/users/[userId]";
 import Image from "next/image";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
-
-const styles = {
-  cardImage: {
-    width: "100%",
-    height: "100%",
-    position: "relative"
-  },
-};
+import ListGroup from "react-bootstrap/ListGroup";
+import { List } from "react-bootstrap-icons";
 
 export default function User({ userData }) {
   return (
@@ -20,9 +14,10 @@ export default function User({ userData }) {
       <Header></Header>
       <UserNavbar></UserNavbar>
       <main>
-        <div styles={styles.cardImage} className="d-flex justify-content-center">
-          <Card className="d-block">
+        <div className="d-flex justify-content-center">
+          <Card className="d-block w-25 mh-100">
             <Image
+              priority
               src={userData.picture}
               width="100%"
               height="100%"
@@ -33,7 +28,23 @@ export default function User({ userData }) {
               <Card.Text className="lead">{userData.quote}</Card.Text>
             </Card.Body>
           </Card>
-          <div className="p-2 bd-highlight color-white">Flex item</div>
+          <div className="bd-highlight color-white mx-4">
+            <Card>
+              <Card.Body>
+                <Card.Title>
+                  {userData.name} | {userData.role}
+                </Card.Title>
+              </Card.Body>
+              <ListGroup className="list-group-flush">
+                {Object.keys(userData).map(
+                  (key) =>
+                    key != "role" && key != "name" && key != "picture" && key != "quote" && key != "_id" && userData[key] !== "" && (
+                      <ListGroup.Item>{ key }: {userData[key]}</ListGroup.Item>
+                    )
+                )}
+              </ListGroup>
+            </Card>
+          </div>
         </div>
       </main>
     </Layout>
