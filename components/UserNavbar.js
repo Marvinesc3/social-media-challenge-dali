@@ -2,7 +2,6 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { Github, House, PersonBadge, Search } from "react-bootstrap-icons";
-
 import Link from "next/link";
 
 export default function UserNavbar() {

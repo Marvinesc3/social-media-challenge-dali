@@ -4,7 +4,7 @@ import Post from "../../../models/Post";
 
 export async function getAllPosts() {
     await dbConnect();
-    const posts = await Post.find({}).sort({ date: 1 });
+    const posts = await Post.find({}).sort({ date_created: 1 });
 
     return posts
 }
