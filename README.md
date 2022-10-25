@@ -13,39 +13,26 @@ through its filesystem.
 
 The following **required** functionality is completed for the front-end:
 
-* [ ] Display user profiles and **at least two other features**
+* [X] Display user
 * [ ] Post Creation
-* [ ] Likes/reactions
-* [ ] Following/friending users
-* [ ] Must be run locally on machines with either npm or yarn
+* [X] Likes/reactions
+* [X] Must be run locally on machines with either npm or yarn
 
 The following **required** functionality is completed for the back-end:
 
-* [ ] Create a REST API with at least GET/POST routes
-* [ ] Must be run locally on machines with either npm or yarn
+* [X] Create a REST API with at least GET/POST routes
+* [X] Must be run locally on machines with either npm or yarn
 
 The following **optional** features are implemented:
 
-* [ ] Improve UI/UX of app
+* [X] Improve UI/UX of app
 * [ ] incorporate d3.js to add some data-viz for the anonymous data chunks
-
-## Video Walkthrough
-
-Here's a walkthrough of implemented features:
-
-<img src='app_recording.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
-
-<!-- Replace this with whatever GIF tool you used! -->
-GIF created with [LiceCap](http://www.cockos.com/licecap/).  
-<!-- Other options include:
-[Kap](https://getkap.co/) for macOS
-[ScreenToGif](https://www.screentogif.com/) for Windows
-[peek](https://github.com/phw/peek) for Linux. -->
 
 ## Notes
 I realized I was using both npm and yarn throughout the project. Although it didn't cause any issues now, I definitely want to use only one for other projects I make.
 If I ever needed to make my own website where I collect user pictures,
 I need to make sure they are all cropped to the same size. 
+
 ## License
 
     Copyright [2022] [Marvin Escobar Barajas]
