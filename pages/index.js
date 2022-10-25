@@ -18,6 +18,7 @@ const MyCarousel = {
     width: "25rem",
     borderRadius: "10px",
     boxSizing: "border-box",
+    color: "#FFF"
   },
 
   CONTAINER_STYLE: {
@@ -36,14 +37,14 @@ const MyCarousel = {
 export default function Home({ users, posts }) {
   return (
     <Layout>
-      <main className="d-flex flex-column min-vh-100">
+      <main className="d-flex flex-column min-vh-100 my-4">
         <Header home></Header>
         <UserNavbar></UserNavbar>
         <section className="posts">
           <div style={MyCarousel.CONTAINER_STYLE}>
-            <ReactCardCarousel autoplay={true} autoplay_speed={4500}>
+            <ReactCardCarousel autoplay={true} autoplay_speed={2000}>
               {posts.map((post) => (
-                <Card style={MyCarousel.CARD_STYLE}>
+                <Card bg="dark" style={MyCarousel.CARD_STYLE}>
                   <Card.Header>{post.dateCreated}</Card.Header>
                   <Card.Body>
                     <Card.Title>{post.name}</Card.Title>
@@ -65,18 +66,20 @@ export default function Home({ users, posts }) {
                   <Card>
                     <div>
                       <Link href={`/users/${user._id}`}>
-                        <Image
-                          style={{
-                            cursor: "pointer",
-                          }}
-                          src={user.picture} // Route of the image file
-                          fluid={+true}
-                          layout="responsive"
-                          width="100%"
-                          height="100%"
-                          objectFit="cover"
-                          alt={user.name}
-                        />
+                        <a>
+                          <Image
+                            style={{
+                              cursor: "pointer",
+                            }}
+                            src={user.picture} // Route of the image file
+                            fluid={+true}
+                            layout="responsive"
+                            width="100%"
+                            height="100%"
+                            objectFit="cover"
+                            alt={user.name}
+                          />
+                        </a>
                       </Link>
                     </div>
 

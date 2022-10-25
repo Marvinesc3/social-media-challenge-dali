@@ -1,6 +1,8 @@
 import { ObjectId } from "mongodb";
 import mongoose from "mongoose";
 
+const MAX_CHARACTER_LIMIT = 280
+
 const PostSchema = new mongoose.Schema(
   {
     name: {
@@ -21,8 +23,8 @@ const PostSchema = new mongoose.Schema(
     message: {
       /* contents of this post */
       type: String,
-      required: [true, "Please provide a message of length 1-60 characters."],
-      maxlength: [60, "Post cannot be more than 60 characters"],
+      required: [true, "Please provide a message of length 1-" + MAX_CHARACTER_LIMIT + " characters."],
+      maxLength: MAX_CHARACTER_LIMIT,
     },
     likes: {
       /* number of likes associated with this post */
