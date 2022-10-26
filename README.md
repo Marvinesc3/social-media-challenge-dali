@@ -14,8 +14,8 @@ through its filesystem.
 The following **required** functionality is completed for the front-end:
 
 * [X] Display user
-* [ ] Post Creation
-* [X] Likes/reactions
+* [X] Post Creation
+* [X] Likes/reactions (sortve)
 * [X] Must be run locally on machines with either npm or yarn
 
 The following **required** functionality is completed for the back-end:
@@ -30,8 +30,13 @@ The following **optional** features are implemented:
 
 ## Notes
 I realized I was using both npm and yarn throughout the project. Although it didn't cause any issues now, I definitely want to use only one for other projects I make.
-If I ever needed to make my own website where I collect user pictures,
-I need to make sure they are all cropped to the same size. 
+
+If I ever needed to make my own website where I collect user pictures, I need to make sure they are all cropped to the same size. 
+
+Liking posts works but require window refresh. This is my fault for using server-side rendering for the posts when I should have used client-side data fetching.
+New posts will be rendered on the front-end, but require manual entry via mongo Atlas. 
+
+All endpoints were tested via Insomnia.
 
 ## License
 
