@@ -34,6 +34,29 @@ const MyCarousel = {
   },
 };
 
+export async function getServerSideProps() {
+  const users = await getAllUsers();
+  const posts = await getAllPosts();
+
+  return {
+    props: {
+      users: JSON.parse(JSON.stringify(users)),
+      posts: JSON.parse(JSON.stringify(posts)),
+    },
+  };
+}
+
+async function likePost(postId) {
+  console.log("liked post!");
+  const res = await fetch(`/api/posts/${postId}`, {
+    method: 'PUT',
+  })
+
+  const data = await res.json()
+  console.log(data);
+
+}
+
 export default function Home({ users, posts }) {
   return (
     <Layout>
@@ -51,7 +74,7 @@ export default function Home({ users, posts }) {
                     <Card.Text>{post.message}</Card.Text>
                   </Card.Body>
                   <Card.Footer>
-                    <Button variant="primary">{ post.likes }</Button>
+                    <Button variant="primary" onClick={() => likePost(post._id)}>{ post.likes }</Button>
                   </Card.Footer>
                 </Card>
               ))}
@@ -105,14 +128,3 @@ export default function Home({ users, posts }) {
   );
 }
 
-export async function getServerSideProps() {
-  const users = await getAllUsers();
-  const posts = await getAllPosts();
-
-  return {
-    props: {
-      users: JSON.parse(JSON.stringify(users)),
-      posts: JSON.parse(JSON.stringify(posts)),
-    },
-  };
-}
