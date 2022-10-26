@@ -14,7 +14,7 @@ through its filesystem.
 The following **required** functionality is completed for the front-end:
 
 * [X] Display user
-* [ ] Post Creation
+* [X] Post Creation
 * [X] Likes/reactions (sortve)
 * [X] Must be run locally on machines with either npm or yarn
 
